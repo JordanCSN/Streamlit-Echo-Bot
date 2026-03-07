@@ -1,4 +1,4 @@
 import streamlit as st
 
 with st.chat_message("user"):
-st.write("Hello 䒰")
+st.write("Hello 👋")
