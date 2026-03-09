@@ -5,6 +5,7 @@ import time
 import requests
 import json
 
+# Allows the program to communicate with the AI service using an API key
 def ai_ask(prompt, data=None, temperature=0.5, max_tokens=250, model="mistral-small-latest", api_key=None, api_url="https://api.mistral.ai/v1/chat/completions"):
     
     if api_key is None or api_url is None:
@@ -76,6 +77,10 @@ st.title("AI chat")
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+# Show the dashboard image once at the top
+with st.chat_message("assistant"):
+    st.image("TheSavedImage.png", caption="CIT 144 – Demographics Data Visualization")
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
